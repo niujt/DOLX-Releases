@@ -6,14 +6,14 @@ DOLX 是一款面向 Windows 和 macOS 的桌面数据库开发工具，将连�
 
 ## 下载与系统要求
 
-[下载最新稳定版本](https://github.com/niujt/DOLX-Releases/releases/latest) · [查看 0.2.3 更新说明](https://github.com/niujt/DOLX-Releases/releases/tag/v0.2.3)
+[Windows 0.2.14 版本说明](https://github.com/niujt/DOLX-Releases/releases/tag/v0.2.14) · [macOS 0.2.13 版本说明](https://github.com/niujt/DOLX-Releases/releases/tag/v0.2.13) · [全部版本](https://github.com/niujt/DOLX-Releases/releases)
 
-| 系统 | 0.2.3 安装包 | 安装方式 |
-| --- | --- | --- |
-| Windows 10 / 11，x64 | [Windows 安装版](https://github.com/niujt/DOLX-Releases/releases/download/v0.2.3/DOLX-Setup-0.2.3-Windows-x64.exe) | 运行安装向导 |
-| macOS 11 及以上，Apple Silicon（arm64） | [macOS DMG](https://github.com/niujt/DOLX-Releases/releases/download/v0.2.3/DOLX-0.2.3-macOS-arm64.dmg) | 将 DOLX 拖入“应用程序” |
+| 系统 | 最新版本 | 安装包 | 安装方式 |
+| --- | --- | --- | --- |
+| Windows 10 / 11，x64 | 0.2.14 | [下载 Windows 安装版](https://github.com/niujt/DOLX-Releases/releases/download/v0.2.14/DOLX-Setup-0.2.14-Windows-x64.exe) | 运行安装向导 |
+| macOS 14 及以上，Apple Silicon（arm64） | 0.2.13 | [下载 macOS DMG](https://github.com/niujt/DOLX-Releases/releases/download/v0.2.13/DOLX-0.2.13-macOS-arm64.dmg) | 将 DOLX 拖入「应用程序」 |
 
-安装包内置数据库服务和 Java 运行环境，无需另外安装 Java。macOS Intel 和 Linux 安装包本次未提供。每次发布附带 SHA-256 校验文件，普通安装只需下载 `.exe` 或 `.dmg`。
+安装包内置数据库服务和 Java 运行环境。校验值见各版本附带的 SHA-256 文件。macOS 安装包支持 NeoDesk 内嵌，签名情况见该版本发布说明。
 
 ## 主要功能
 
@@ -31,9 +31,7 @@ DOLX 是一款面向 Windows 和 macOS 的桌面数据库开发工具，将连�
 
 ## 界面预览
 
-0.2.3 全面采用极简设计：浅灰侧栏、细分隔线、扁平工具栏和设置分组，SQL、表结构、Redis、PL/SQL、弹窗及帮助页面统一深浅主题。
-
-以下为 0.2.3 界面演示。截图中的连接地址、账号、SQL 和商品数据全部为虚构示例，不含真实环境信息；查询耗时和行数不作为性能指标。
+以下截图来自 0.2.3。截图中的连接地址、账号、SQL 和商品数据全部为虚构示例，不含真实环境信息；查询耗时和行数不作为性能指标。
 
 ### SQL 编辑与查询结果 · 极简浅色主题
 
@@ -55,4 +53,4 @@ DOLX 是一款面向 Windows 和 macOS 的桌面数据库开发工具，将连�
 
 升级前保存 SQL，处理未提交事务并退出应用。Windows 运行新安装包；macOS 将新版本拖入“应用程序”并替换。
 
-已安装 0.2.2 的用户会收到 0.2.3 更新提醒，可直接使用应用提供的下载链接。0.2.1 及更早版本需先手动安装最新版。应用会在启动后及运行期间定期检查后续稳定版本，下载完成后运行安装包升级。
+可从上表选择对应平台的安装包，也可以在 DOLX 设置中检查适用于当前平台的稳定版本。
