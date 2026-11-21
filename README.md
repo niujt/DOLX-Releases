@@ -1,8 +1,6 @@
 # DOLX
 
-DOLX 是一款面向 Windows 和 macOS 的桌面数据库开发工具，将连接管理、SQL 编写、数据查询、对象结构查看和事务操作集中在同一个工作区。支持 Oracle、OceanBase Oracle、MySQL、OceanBase MySQL 和 Redis，适合日常开发、数据排查与数据库维护。
-
-本仓库提供公开安装包、版本说明和界面预览。
+DOLX 是面向 Windows 和 macOS 的桌面数据库开发工具。在同一个工作区管理连接、编写和执行 SQL、查看结构、编辑数据与处理事务。macOS 也支持在 NeoDesk 中内嵌使用。
 
 ## 下载与系统要求
 
@@ -15,57 +13,28 @@ DOLX 是一款面向 Windows 和 macOS 的桌面数据库开发工具，将连�
 
 安装包内置数据库服务和 Java 运行环境。校验值见各版本附带的 SHA-256 文件。macOS 安装包支持 NeoDesk 内嵌，签名情况见该版本发布说明。
 
-## 近期更新
+## 核心功能
 
-### Windows 0.2.16
+- **SQL 开发工作台** 支持多标签、草稿恢复、表名与字段补全、SQL 格式化、命名参数和执行计划。结果可分页、编辑，并导出为 Excel、CSV、JSON 或 INSERT SQL。
+- **跨连接对象搜索** Windows 版在已连接的数据库及所选 Schema 中搜索表、视图、字段和例程，直接列出命中的对象及其来源。在 SQL 控制台连按三次 Shift 可按名称、注释或简写查找。
+- **跨库结构对比** 支持 Oracle 与 OceanBase Oracle、MySQL 与 OceanBase MySQL 在各自兼容模式内对比结构，生成可预览和保存的增量 SQL。
+- **多数据源支持** 可连接 Oracle、MySQL、OceanBase、SQL Server、达梦、SQLite 和 H2。Redis 提供 Key 搜索与值编辑，Kafka、RabbitMQ、ZooKeeper 和 MongoDB 提供专用控制台。
+- **Oracle 调试与数据库 MCP** 支持 PL/SQL 源码、断点和单步调试。Windows 可通过 DeepSeek Harness 使用数据库 MCP，访问范围可细化到连接、表和字段。
 
-- 在 SQL 控制台连按三次 Shift，可按名称、注释或简写查找表、视图、字段、函数、存储过程和包。字段结果会显示所属表或视图。
-- 数据库侧栏会在已连接的数据库及所选 Schema 中搜索，直接列出命中对象。表和视图优先，每条结果附连接名、Schema 和数据库地址。
-- Oracle、MySQL、OceanBase、Redis、ZooKeeper 等数据源使用各自的线条图标。测试和 Git 面板可移除当前目录关联。
-- 修复冷启动时标题栏图标放大、欢迎页被挤出窗口的问题。Core 在后台启动，期间可以打开设置和关闭尚未打开控制台的窗口。
-
-### macOS 0.2.13
-
-- Redis Key 搜索可扫描当前数据库。断线后点击刷新会尝试自动重连，并继续按原有搜索条件扫描。
-
-## 主要功能
-
-- **多数据库连接**：管理 Oracle、OceanBase、MySQL 和 Redis 数据源，切换 Schema，设置连接颜色和只读模式；Redis 支持 ACL、Database index 和 TLS。
-- **SQL 编辑与执行**：多标签页、语法高亮、表名和字段补全、当前语句或选区执行、脚本运行、执行计划、方言参考及已保存控制台。
-- **对象与元数据**：过滤和搜索数据库对象，查看列、注释、索引、约束与 DDL；对象列表优先展示，较慢的元数据在后台补充。
-- Oracle 与 OceanBase Oracle、MySQL 与 OceanBase MySQL 支持在各自兼容模式内做跨库结构对比，生成可审阅、可保存的增量 SQL。
-- Windows 支持通过 DeepSeek Harness 使用数据库 MCP。应用内手册提供配置步骤，访问范围可细化到连接、表和字段。
-- **查询结果**：分页、当前页过滤、多行或整列选择、复制，以及 CSV / Excel / JSON / INSERT SQL 导出。Excel 支持重新查询并流式导出全部结果，其余格式导出当前加载页。
-- **数据编辑与事务**：可编辑结果支持修改、新增和删除，需可靠主键或唯一键；支持自动提交、提交、回滚，以及共享或独立会话。
-- **Oracle PL/SQL 开发**：源码查看、编辑、编译、断点调试、单步执行和变量查看，需数据库支持及相应权限。
-- **Redis 控制台**：命令执行、结果查看、命令参考、参数提示和错误说明。
-- **外观与配置迁移**：深浅主题、字体设置、侧边栏收展和动效；连接凭据使用系统安全存储，支持加密配置备份与迁移。
-- **软件更新**：自动检查稳定版本，显示提醒并提供对应平台的安装包链接，也可在设置或帮助菜单中手动检查。
-
-具体对象类型、编辑与调试能力取决于数据库类型、版本和账号权限。
+具体操作取决于数据库类型、版本和账号权限。
 
 ## 界面预览
 
-以下截图来自 0.2.3。截图中的连接地址、账号、SQL 和商品数据全部为虚构示例，不含真实环境信息；查询耗时和行数不作为性能指标。
+截图使用演示数据。
 
-### SQL 编辑与查询结果 · 极简浅色主题
+### SQL 编辑与查询结果
 
-![DOLX SQL 编辑与查询结果，使用虚构示例数据](docs/screenshots/v0.2.3/sql-console.png)
+![DOLX SQL 控制台与产品目录查询结果](docs/screenshots/workbench/sql-console.png)
 
-### SQL 编辑与查询结果 · 深色主题
+### 数据库对象搜索
 
-![DOLX SQL 编辑与查询结果，深色主题](docs/screenshots/v0.2.3/sql-console-dark.png)
+![DOLX 侧栏搜索结果及其来源](docs/screenshots/workbench/database-search.png)
 
-### 表结构与对象详情 · 浅色主题
+### Redis Key 浏览
 
-![DOLX 表结构与对象详情，使用虚构示例数据](docs/screenshots/v0.2.3/table-details.png)
-
-### 软件更新与外观设置
-
-![DOLX 软件更新与外观设置，使用虚构示例连接](docs/screenshots/v0.2.3/software-updates.png)
-
-## 升级
-
-升级前保存 SQL，处理未提交事务并退出应用。Windows 运行新安装包；macOS 将新版本拖入“应用程序”并替换。
-
-可从上表选择对应平台的安装包，也可以在 DOLX 设置中检查适用于当前平台的稳定版本。
+![DOLX Redis Key 浏览与 JSON 值](docs/screenshots/workbench/redis-browser.png)
